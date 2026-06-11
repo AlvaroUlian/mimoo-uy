@@ -762,14 +762,16 @@ img {
         padding: 4rem 0 6rem;
     }
 
+    /* En celular van a las esquinas del hero, fuera del área del texto:
+       arriba del logo (en el padding superior) y debajo del botón */
     .decor {
-        width: 58px;
-        opacity: 0.8;
+        width: 52px;
+        opacity: 0.85;
     }
 
-    .decor-1 { top: 4%; left: 4%; }
-    .decor-2 { top: 12%; right: 4%; }
-    .decor-3 { bottom: 4%; left: 6%; }
+    .decor-1 { top: -3rem; left: -2%; }
+    .decor-2 { top: -3rem; right: -2%; }
+    .decor-3 { bottom: -3.2rem; left: auto; right: 0; }
 
     .steps-container {
         flex-direction: column;
