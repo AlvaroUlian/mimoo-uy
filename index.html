@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mimoo | Muñecos de tela hechos a mano 🧸</title>
+    <meta name="description" content="Emprendimiento uruguayo de muñecos de tela hechos a mano. Ositos, patitos, conejos y ratoncitos de 15 cm aprox, cosidos con mucho amor.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER / HERO -->
+    <header class="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="container hero-content">
+            <h1 class="logo">mimoo <img src="images/decor/vintage-osito.png" alt="" class="logo-icon"></h1>
+            <h2 class="subtitle">Muñecos de tela hechos a mano</h2>
+            <p class="hero-tagline">Ositos, patitos, conejos y ratoncitos de <strong>15 cm aprox.</strong>, cosidos puntada a puntada en Uruguay 🇺🇾</p>
+            <button id="btn-hero-cta" class="btn-primary">Conocer los muñecos ✨</button>
+            <div class="decorations" aria-hidden="true">
+                <img class="decor decor-1" src="images/decor/vintage-patito.png" alt="">
+                <img class="decor decor-2" src="images/decor/vintage-conejita.png" alt="">
+                <img class="decor decor-3" src="images/decor/vintage-ratoncito.png" alt="">
+            </div>
+        </div>
+        <div class="wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main>
+        <!-- GALERÍA DE TRABAJOS -->
+        <section id="galeria" class="gallery-section section">
+            <div class="container">
+                <h2 class="section-title text-center">Nuestros muñecos 🌼</h2>
+                <p class="section-subtitle text-center">Todos los muñecos miden <strong>15 cm aprox.</strong> — el tamaño perfecto para acompañar a los más chiquitos (¡y a los no tan chiquitos!)</p>
+                <div class="filters" role="group" aria-label="Filtrar muñecos por tipo">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ositos">Ositos 🐻</button>
+                    <button class="filter-btn" data-filter="patitos">Patitos 🐤</button>
+                    <button class="filter-btn" data-filter="conejitos">Conejitos 🐰</button>
+                    <button class="filter-btn" data-filter="ratoncitos">Ratoncitos 🐭</button>
+                    <button class="filter-btn" data-filter="otros">Más amigos ✨</button>
+                </div>
+                
+                <div class="grid" id="product-grid">
+                    <!-- Cards de productos generadas por JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CÓMO FUNCIONA -->
+        <section id="como-encargar" class="how-it-works-section section">
+            <div class="container">
+                <h2 class="section-title text-center">¿Cómo encargar tu mimoo? 💭</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-icon">🧸</div>
+                        <h3 class="step-title">1. Elegís</h3>
+                        <p class="step-desc">Buscá tu muñeco favorito en la galería o imaginá uno personalizado: elegís el animalito, los colores y las telas.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">📋</div>
+                        <h3 class="step-title">2. Completás</h3>
+                        <p class="step-desc">Llená el formulario con tus datos, la personalización y la fecha en que lo necesitás.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">💌</div>
+                        <h3 class="step-title">3. Coordinamos</h3>
+                        <p class="step-desc">Te escribimos por Instagram para confirmar los detalles, la seña y la entrega.</p>
+                    </div>
+                </div>
+                <div class="alert-banner">
+                    <span class="alert-icon">🪡</span> 
+                    <p>Cada muñeco se hace especialmente para vos. Para comenzar el trabajo se requiere una <strong>seña del 50%</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MIMOO -->
+        <section id="sobre" class="about-section section">
+            <div class="container about-container">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre mimoo 🌷</h2>
+                    <p>¡Hola! Soy la creadora detrás de mimoo. Cada muñeco que ves acá está cosido a mano con telas suaves y muchísima dedicación, pensando en la sonrisa de quien lo va a recibir.</p>
+                    <p>Trabajo desde Uruguay 🇺🇾 de forma 100% artesanal: corto, coso y bordo cada pieza, por eso cada muñeco es único e irrepetible. Los hago de <strong>15 cm aprox.</strong>, un tamaño ideal para abrazar, decorar y regalar.</p>
+                    <p>Me encanta cuidar los pequeños detalles —un cuellito de tela cuadrillé, un gorrito con pompón, un moño suave— para que tu mimoo sea verdaderamente especial.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-blob">
+                        <img src="images/trio-ratoncitos.jpeg" alt="Trío de ratoncitos de tela hechos a mano" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="wave-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>mimoo</h3>
+                    <p>Muñecos de tela hechos con 🪡 y amor en Uruguay</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://instagram.com/mimoo.uy" target="_blank" rel="noopener" class="ig-link">📱 Seguinos en Instagram (@mimoo.uy)</a>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                <p>Cada muñeco es único y hecho a mano (15 cm aprox.). Los tiempos de entrega varían según el diseño. Se requiere seña del 50% para iniciar el trabajo.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE PEDIDO -->
+    <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content">
+            <button class="close-btn" aria-label="Cerrar">&times;</button>
+            <h2 class="modal-title" id="modal-title">Encargar tu mimoo 🎀</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="nombre">Tu nombre completo</label>
+                    <input type="text" id="nombre" required placeholder="Ej: María Pérez" autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="instagram">Tu usuario de Instagram</label>
+                    <input type="text" id="instagram" required placeholder="Ej: @maria_perez">
+                </div>
+
+                <div class="form-group">
+                    <label for="muneco">Muñeco seleccionado</label>
+                    <select id="muneco" required>
+                        <!-- Opciones generadas por JS -->
+                    </select>
+                    <small class="form-hint">Tamaño estándar: 15 cm aprox.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="personalizacion">Colores o personalización deseada</label>
+                    <textarea id="personalizacion" rows="2" placeholder="Ej: Con cuellito cuadrillé rosa y gorrito con pompón..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha deseada de entrega</label>
+                    <input type="date" id="fecha" required>
+                    <small class="form-hint">Mínimo 2 semanas de anticipación</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="nota">Nota adicional (opcional)</label>
+                    <textarea id="nota" rows="2" placeholder="Cualquier otro detalle..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary btn-block">Enviar pedido 💌</button>
+            </form>
+            
+            <div id="success-message" class="success-message hidden">
+                <h3>¡Gracias! 🌼</h3>
+                <p>Te vamos a contactar por Instagram pronto para coordinar tu muñeco y la seña del 50%.</p>
+                <p class="redirect-msg">Abriendo Instagram...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX PARA VER FOTOS EN GRANDE -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada del muñeco">
+        <button class="lightbox-close" aria-label="Cerrar foto">&times;</button>
+        <figure class="lightbox-figure">
+            <img id="lightbox-img" src="" alt="">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

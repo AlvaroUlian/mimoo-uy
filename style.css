@@ -1,0 +1,807 @@
+/* ==========================================================================
+   Variables y Configuración Inicial
+   ========================================================================== */
+:root {
+    /* Paleta inspirada en los muñecos: amarillo patito, cuadrillé,
+       verdes, marrones, celestes y rosas */
+    --color-yellow: #F6D67E;        /* amarillo patito */
+    --color-yellow-soft: #FBEBC4;
+    --color-sage: #9DB597;          /* verde salvia */
+    --color-sage-soft: #DCE7D8;
+    --color-brown: #8A6A50;         /* marrón osito */
+    --color-blue: #BCD8E8;          /* celeste */
+    --color-blue-soft: #E3F0F7;
+    --color-pink: #F3C5CC;          /* rosa */
+    --color-pink-soft: #FBE7EA;
+    --color-cream: #FAF4E8;         /* lino crudo */
+    --color-offwhite: #FFFDF8;
+
+    /* Colores de texto y sombras */
+    --color-text-dark: #5B4636;     /* marrón cálido */
+    --color-text-light: #94816F;
+    --color-shadow: rgba(246, 214, 126, 0.35);
+
+    /* Tipografías */
+    --font-heading: 'Nunito', sans-serif;
+    --font-body: 'Quicksand', sans-serif;
+
+    /* Medidas */
+    --border-radius: 24px;
+    --border-radius-sm: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text-dark);
+    background-color: var(--color-offwhite);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-text-dark);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
+.section-subtitle {
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+/* ==========================================================================
+   Componentes Reutilizables
+   ========================================================================== */
+
+/* Botones */
+.btn-primary {
+    background-color: var(--color-yellow);
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(246, 214, 126, 0.6);
+    background-color: #f3cd66;
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid var(--color-brown);
+    outline-offset: 2px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* ==========================================================================
+   Header / Hero
+   ========================================================================== */
+.hero {
+    position: relative;
+    background: linear-gradient(160deg, var(--color-cream) 0%, var(--color-yellow-soft) 55%, var(--color-yellow) 130%);
+    padding: 6rem 0 8rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Cuadrillé (vichy) blanco sutil, como las telas de los muñecos */
+.hero-bg-pattern {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.35) 0 14px, transparent 14px 28px),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.35) 0 14px, transparent 14px 28px);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(138, 106, 80, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.logo-icon {
+    height: 1.1em;
+    width: auto;
+    filter: drop-shadow(2px 3px 3px rgba(138, 106, 80, 0.25));
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--color-text-dark);
+}
+
+.hero-tagline {
+    max-width: 520px;
+    margin: 0 auto 2rem;
+    color: var(--color-text-dark);
+    font-size: 1.05rem;
+}
+
+/* Decoraciones animadas en el hero */
+.decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.decor {
+    position: absolute;
+    width: clamp(70px, 9vw, 130px);
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(3px 5px 6px rgba(138, 106, 80, 0.2));
+    opacity: 0.95;
+}
+
+.decor-1 { top: 8%; left: 8%; animation-delay: 0s; rotate: -8deg; }
+.decor-2 { top: 22%; right: 8%; animation-delay: 1.3s; rotate: 7deg; }
+.decor-3 { bottom: 6%; left: 16%; animation-delay: 2.2s; rotate: 5deg; }
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Olas SVG */
+.wave-bottom, .wave-top {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-bottom {
+    bottom: 0;
+    transform: translateY(1px); /* Previene línea blanca */
+}
+
+.wave-top {
+    top: -1px;
+    transform: rotate(180deg);
+}
+
+.wave-bottom svg, .wave-top svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+}
+
+.wave-bottom .shape-fill, .wave-top .shape-fill {
+    fill: var(--color-offwhite);
+}
+
+/* ==========================================================================
+   Galería
+   ========================================================================== */
+.gallery-section {
+    background-color: var(--color-offwhite);
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: white;
+    border: 2px solid var(--color-sage-soft);
+    color: var(--color-text-dark);
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: var(--color-sage-soft);
+    border-color: var(--color-sage);
+    color: var(--color-text-dark);
+}
+
+.filter-btn:focus-visible {
+    outline: 3px solid var(--color-sage);
+    outline-offset: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* Cards de productos */
+.product-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(138, 106, 80, 0.06);
+    transition: var(--transition);
+    border: 1px solid var(--color-yellow-soft);
+    display: flex;
+    flex-direction: column;
+    animation: cardIn 0.4s ease both;
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px var(--color-shadow);
+}
+
+.product-image-wrapper {
+    position: relative;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    padding-top: 100%; /* Aspect ratio 1:1 */
+    background-color: var(--color-cream);
+    margin-bottom: 1rem;
+    cursor: zoom-in;
+}
+
+.product-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+    transform: scale(1.06);
+}
+
+/* Insignia con el tamaño del muñeco */
+.size-badge {
+    position: absolute;
+    bottom: 0.6rem;
+    right: 0.6rem;
+    background-color: rgba(255, 253, 248, 0.92);
+    color: var(--color-text-dark);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(138, 106, 80, 0.15);
+    pointer-events: none;
+}
+
+.product-emoji {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+}
+
+.product-info {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-desc {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.product-price {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--color-brown);
+    margin-bottom: 1rem;
+}
+
+.btn-order {
+    background-color: var(--color-pink);
+    color: var(--color-text-dark);
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(243, 197, 204, 0.4);
+}
+
+.btn-order:hover {
+    background-color: #efb3bc;
+    box-shadow: 0 4px 15px rgba(243, 197, 204, 0.7);
+}
+
+/* ==========================================================================
+   Cómo Funciona
+   ========================================================================== */
+.how-it-works-section {
+    background-color: var(--color-blue-soft);
+    position: relative;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 20px rgba(138, 106, 80, 0.05);
+    position: relative;
+    transition: var(--transition);
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: var(--color-blue-soft);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    box-shadow: inset 0 0 10px rgba(138, 106, 80, 0.04);
+}
+
+.step-title {
+    margin-bottom: 0.5rem;
+}
+
+.alert-banner {
+    background-color: white;
+    border: 2px dashed var(--color-brown);
+    border-radius: var(--border-radius-sm);
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.alert-icon {
+    font-size: 1.5rem;
+}
+
+/* ==========================================================================
+   Sobre mimoo
+   ========================================================================== */
+.about-section {
+    background-color: var(--color-offwhite);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-blob {
+    width: 340px;
+    height: 340px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    overflow: hidden;
+    animation: blob 8s ease-in-out infinite;
+    box-shadow: 0 20px 40px rgba(157, 181, 151, 0.35);
+    border: 6px solid var(--color-sage-soft);
+}
+
+.image-blob img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes blob {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+    100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    background-color: var(--color-cream);
+    padding: 4rem 0 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(138, 106, 80, 0.1);
+}
+
+.footer-brand h3 {
+    font-size: 2rem;
+    color: var(--color-brown);
+    margin-bottom: 0.5rem;
+}
+
+.ig-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--color-text-dark);
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(138, 106, 80, 0.08);
+    transition: var(--transition);
+}
+
+.ig-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(138, 106, 80, 0.15);
+}
+
+.footer-disclaimer {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(91, 70, 54, 0.55);
+    backdrop-filter: blur(4px);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--color-offwhite);
+    margin: 5% auto;
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--color-text-light);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: var(--color-brown);
+}
+
+.modal-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-brown);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--color-yellow-soft);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text-dark);
+    transition: var(--transition);
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-yellow);
+    box-shadow: 0 0 0 3px rgba(246, 214, 126, 0.25);
+}
+
+.form-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-top: 0.3rem;
+}
+
+.success-message {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.success-message h3 {
+    color: var(--color-sage);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.redirect-msg {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--color-text-light);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   Lightbox (ver fotos en grande)
+   ========================================================================== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1100;
+    inset: 0;
+    background-color: rgba(91, 70, 54, 0.85);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox-figure {
+    text-align: center;
+    max-width: 90vw;
+    animation: modalFadeIn 0.25s ease;
+}
+
+.lightbox-figure img {
+    max-height: 78vh;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+    margin: 0 auto;
+}
+
+.lightbox-figure figcaption {
+    color: var(--color-cream);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-top: 1rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--color-cream);
+    font-size: 2.8rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    transform: scale(1.15);
+    color: var(--color-yellow);
+}
+
+/* ==========================================================================
+   Accesibilidad: menos movimiento
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 0;
+    }
+    
+    .logo {
+        font-size: 3rem;
+    }
+    
+    .hero {
+        padding: 4rem 0 6rem;
+    }
+
+    .decor {
+        width: 58px;
+        opacity: 0.8;
+    }
+
+    .decor-1 { top: 4%; left: 4%; }
+    .decor-2 { top: 12%; right: 4%; }
+    .decor-3 { bottom: 4%; left: 6%; }
+
+    .steps-container {
+        flex-direction: column;
+    }
+    
+    .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .image-blob {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+
+    .product-title {
+        font-size: 1.1rem;
+    }
+
+    .btn-order {
+        font-size: 0.95rem;
+        padding: 0.7rem 1rem;
+    }
+}
