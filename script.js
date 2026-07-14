@@ -1,116 +1,71 @@
-// Catálogo de muñecos de tela (todos de 15 cm aprox.)
+// Catálogo de muñecos de tela
+const PRECIO_LANZAMIENTO = 1200;
+const WHATSAPP_NUMERO = '59895450900';
+
 const productos = [
     {
-        id: 'osito-marron',
-        nombre: 'Osito Marrón',
-        descripcion: 'Osito de pana marrón con cuellito celeste, suave y abrazable.',
-        precio: 1200,
-        categoria: 'ositos',
-        imagen: 'images/osito-marron.jpeg'
+        id: 'dragon',
+        nombre: 'Dragoncito',
+        descripcion: 'Dragón blanco de tela suave con alitas y cuellito cuadrillé marrón, un guardián tierno.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'fantasia',
+        imagen: 'images/nuevosMuñecos/dragon.jpeg'
     },
     {
-        id: 'osito-blanco',
-        nombre: 'Osito Soñador',
-        descripcion: 'Osito blanco con gorrito y cuello cuadrillé verde, listo para soñar.',
-        precio: 1200,
-        categoria: 'ositos',
-        imagen: 'images/osito-blanco.jpeg'
+        id: 'elefante',
+        nombre: 'Elefantito',
+        descripcion: 'Elefantito crema con oreja y moño rosa cuadrillé, suave y abrazable.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'animales',
+        imagen: 'images/nuevosMuñecos/elefante.jpeg'
     },
     {
-        id: 'patito-gorro-verde',
-        nombre: 'Patito Fiestero',
-        descripcion: 'Patito blanco con gorrito y cuello a rayas verdes, ¡siempre de festejo!',
-        precio: 1300,
-        categoria: 'patitos',
-        imagen: 'images/patito-gorro-verde.jpeg'
+        id: 'foca',
+        nombre: 'Foquita',
+        descripcion: 'Foquita celeste de tela mullida con cuello rosa cuadrillé, dulce y juguetona.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'animales',
+        imagen: 'images/nuevosMuñecos/foca.jpeg'
     },
     {
-        id: 'patito-cuadrille',
-        nombre: 'Patito Campestre',
-        descripcion: 'Patito de tela suave con moño verde y bufanda cuadrillé.',
-        precio: 1300,
-        categoria: 'patitos',
-        imagen: 'images/patito-cuadrille.jpeg'
+        id: 'gaviota',
+        nombre: 'Gaviota',
+        descripcion: 'Gaviota blanca con pico naranja, pañuelo celeste cuadrillé y patitas largas.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'animales',
+        imagen: 'images/nuevosMuñecos/gaviota.jpeg'
     },
     {
-        id: 'gansa-mono-rosa',
-        nombre: 'Gansa Rosita',
-        descripcion: 'Gansita de lino con moño y cinta rosa, dulce y elegante.',
-        precio: 1300,
-        categoria: 'patitos',
-        imagen: 'images/gansa-mono-rosa.jpeg'
+        id: 'flor',
+        nombre: 'Flor Sonrisa',
+        descripcion: 'Margarita de tela blanca con centro naranja y carita bordada, pura alegría.',
+        precio: 650,
+        categoria: 'flor',
+        imagen: 'images/nuevosMuñecos/flor.jpeg'
     },
     {
-        id: 'coneja-rosa',
-        nombre: 'Coneja Rosita',
-        descripcion: 'Conejita de orejas largas con cuello rosa cuadrillé y mejillas sonrojadas.',
-        precio: 1400,
-        categoria: 'conejitos',
-        imagen: 'images/coneja-rosa.jpeg'
+        id: 'raton',
+        nombre: 'Ratoncito',
+        descripcion: 'Ratoncito blanco de tela suave con cuello cuadrillé marrón, curioso y tierno.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'animales',
+        imagen: 'images/nuevosMuñecos/raton.jpeg'
     },
     {
-        id: 'conejo-gorro-rosa',
-        nombre: 'Conejita Fiestera',
-        descripcion: 'Conejita blanca con gorrito rosa a lunares y pompón, ¡de cumpleaños!',
-        precio: 1400,
-        categoria: 'conejitos',
-        imagen: 'images/conejo-gorro-rosa.jpeg'
+        id: 'caballo',
+        nombre: 'Caballito',
+        descripcion: 'Caballito blanco con cola de hilo y moño verde cuadrillé, elegante y suave.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'animales',
+        imagen: 'images/nuevosMuñecos/caballo.jpeg'
     },
     {
-        id: 'conejito-blanco',
-        nombre: 'Conejito Nube',
-        descripcion: 'Conejito blanco con moño y colita de pompón, suave como una nube.',
-        precio: 1300,
-        categoria: 'conejitos',
-        imagen: 'images/conejito-blanco.jpeg'
-    },
-    {
-        id: 'raton-celeste',
-        nombre: 'Ratoncito Celeste',
-        descripcion: 'Ratoncito de tela con cuello celeste, curioso y juguetón.',
-        precio: 1200,
-        categoria: 'ratoncitos',
-        imagen: 'images/raton-celeste.jpeg'
-    },
-    {
-        id: 'raton-lila',
-        nombre: 'Ratoncita Lila',
-        descripcion: 'Ratoncita de orejas grandes con cuello lila a lunares.',
-        precio: 1200,
-        categoria: 'ratoncitos',
-        imagen: 'images/raton-lila.jpeg'
-    },
-    {
-        id: 'raton-verde',
-        nombre: 'Ratoncito Bosque',
-        descripcion: 'Ratoncito con cuello verde, un amiguito del bosque.',
-        precio: 1200,
-        categoria: 'ratoncitos',
-        imagen: 'images/raton-verde.jpeg'
-    },
-    {
-        id: 'trio-ratoncitos',
-        nombre: 'Trío de Ratoncitos',
-        descripcion: 'Tres ratoncitos mini con cuellitos lila, verde y rosa. ¡Inseparables!',
-        precio: 2800,
-        categoria: 'ratoncitos',
-        imagen: 'images/trio-ratoncitos.jpeg'
-    },
-    {
-        id: 'dragon-gris',
-        nombre: 'Dragoncito Valiente',
-        descripcion: 'Dragón de pana gris con alitas celestes, el guardián más tierno.',
-        precio: 1500,
-        categoria: 'otros',
-        imagen: 'images/dragon-gris.jpeg'
-    },
-    {
-        id: 'personalizado',
-        nombre: 'Diseño Personalizado',
-        descripcion: 'Elegí el animalito, las telas y los colores: lo creamos juntos desde cero.',
-        precio: 'A cotizar',
-        categoria: 'otros',
-        emoji: '✨'
+        id: 'unicornio',
+        nombre: 'Unicornio',
+        descripcion: 'Unicornio celeste con cuerno blanco, crin de hilo y alitas suaves.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'fantasia',
+        imagen: 'images/nuevosMuñecos/unicornio.jpeg'
     }
 ];
 
@@ -136,11 +91,12 @@ function renderProducts(categoria = 'all') {
         : productos.filter(p => p.categoria === categoria);
 
     productosFiltrados.forEach((prod, index) => {
-        const formatPrecio = typeof prod.precio === 'number' ? `$${prod.precio} UYU` : prod.precio;
+        const formatPrecio = typeof prod.precio === 'number'
+            ? `${prod.precio === PRECIO_LANZAMIENTO ? '<span class="price-badge">Precio de lanzamiento</span> ' : ''}$${prod.precio} UYU`
+            : prod.precio;
 
         const imagenHTML = prod.imagen
-            ? `<img src="${prod.imagen}" alt="${prod.nombre}, muñeco de tela hecho a mano de 15 cm aprox." loading="lazy">
-               <span class="size-badge">15 cm aprox.</span>`
+            ? `<img src="${prod.imagen}" alt="${prod.nombre}, muñeco de tela hecho a mano" loading="lazy">`
             : `<div class="product-emoji">${prod.emoji}</div>`;
 
         const card = document.createElement('div');
@@ -160,14 +116,12 @@ function renderProducts(categoria = 'all') {
         productGrid.appendChild(card);
     });
 
-    // Botones de encargar
     document.querySelectorAll('.btn-order').forEach(btn => {
         btn.addEventListener('click', (e) => {
             abrirModal(e.target.dataset.id);
         });
     });
 
-    // Abrir lightbox al tocar la foto
     document.querySelectorAll('.product-image-wrapper[data-img]').forEach(wrapper => {
         wrapper.addEventListener('click', () => abrirLightbox(wrapper.dataset.img, wrapper.dataset.nombre));
         wrapper.addEventListener('keydown', (e) => {
@@ -179,10 +133,8 @@ function renderProducts(categoria = 'all') {
     });
 }
 
-// Inicializar galería
 renderProducts();
 
-// Filtrado
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         filterBtns.forEach(b => b.classList.remove('active'));
@@ -191,12 +143,10 @@ filterBtns.forEach(btn => {
     });
 });
 
-// Scroll suave desde el hero
 btnHeroCta.addEventListener('click', () => {
     document.getElementById('galeria').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Llenar el select del formulario con todos los productos
 function poblarSelect() {
     selectMuneco.innerHTML = '<option value="">Selecciona un muñeco...</option>';
     productos.forEach(prod => {
@@ -209,7 +159,6 @@ function poblarSelect() {
 
 poblarSelect();
 
-// Configurar fecha mínima (2 semanas a partir de hoy)
 const dateInput = document.getElementById('fecha');
 const hoy = new Date();
 hoy.setDate(hoy.getDate() + 14);
@@ -221,8 +170,8 @@ dateInput.setAttribute('min', minDate);
 // ==========================================================================
 function abrirLightbox(src, nombre) {
     lightboxImg.src = src;
-    lightboxImg.alt = `${nombre}, muñeco de tela hecho a mano de 15 cm aprox.`;
-    lightboxCaption.textContent = `${nombre} · 15 cm aprox.`;
+    lightboxImg.alt = `${nombre}, muñeco de tela hecho a mano`;
+    lightboxCaption.textContent = nombre;
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
 }
@@ -272,7 +221,6 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// Cerrar modal o lightbox con la tecla Escape
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (lightbox.classList.contains('open')) cerrarLightbox();
@@ -280,12 +228,12 @@ window.addEventListener('keydown', (e) => {
     }
 });
 
-// Envío del formulario
+// Envío del formulario por WhatsApp
 orderForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const nombre = document.getElementById('nombre').value;
-    const instagram = document.getElementById('instagram').value;
+    const instagram = document.getElementById('instagram').value.trim();
     const muneco = document.getElementById('muneco').value;
     const personalizacion = document.getElementById('personalizacion').value || 'Ninguna';
     const fecha = document.getElementById('fecha').value;
@@ -294,24 +242,32 @@ orderForm.addEventListener('submit', (e) => {
     const [year, month, day] = fecha.split('-');
     const fechaFormateada = `${day}/${month}/${year}`;
 
-    const mensaje = `¡Hola mimoo! 👋 Quiero encargar un muñeco de tela.
-🧸 Muñeco: ${muneco} (15 cm aprox.)
+    const lineaInstagram = instagram ? `📸 Instagram: ${instagram}\n` : '';
+
+    const productoSeleccionado = productos.find(p => p.nombre === muneco);
+    const precioPedido = productoSeleccionado && typeof productoSeleccionado.precio === 'number'
+        ? productoSeleccionado.precio
+        : PRECIO_LANZAMIENTO;
+    const etiquetaPrecio = precioPedido === PRECIO_LANZAMIENTO ? 'Precio de lanzamiento' : 'Precio';
+
+    const mensaje = `¡Hola Mimo! 👋 Quiero encargar un muñeco de tela.
+🧸 Muñeco: ${muneco}
+💰 ${etiquetaPrecio}: $${precioPedido} UYU
 🎨 Personalización: ${personalizacion}
 📅 Fecha deseada: ${fechaFormateada}
 👤 Mi nombre: ${nombre}
-📸 Mi usuario: ${instagram}
-✏️ Nota: ${nota}
+${lineaInstagram}✏️ Nota: ${nota}
 
 ¡Quedo a la espera! 🪡`;
 
     const mensajeEncoded = encodeURIComponent(mensaje);
-    const igLink = `https://ig.me/m/mimoo.uy?text=${mensajeEncoded}`;
+    const whatsappLink = `https://wa.me/${WHATSAPP_NUMERO}?text=${mensajeEncoded}`;
 
     orderForm.classList.add('hidden');
     document.getElementById('success-message').classList.remove('hidden');
 
     setTimeout(() => {
-        window.open(igLink, '_blank');
+        window.open(whatsappLink, '_blank');
         setTimeout(cerrarModal, 3000);
     }, 1500);
 });
