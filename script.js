@@ -6,7 +6,7 @@ const productos = [
     {
         id: 'dragon',
         nombre: 'Dragoncito',
-        descripcion: 'Dragón blanco de tela suave con alitas y cuellito cuadrillé marrón, un guardián tierno.',
+        descripcion: 'Dragón blanco de tela suave con alitas y cuellito cuadrillé marrón.',
         precio: PRECIO_LANZAMIENTO,
         categoria: 'fantasia',
         imagen: 'images/nuevosMuñecos/dragon.jpeg'
@@ -22,7 +22,7 @@ const productos = [
     {
         id: 'foca',
         nombre: 'Foquita',
-        descripcion: 'Foquita celeste de tela mullida con cuello rosa cuadrillé, dulce y juguetona.',
+        descripcion: 'Foquita celeste de tela mullida con cuello rosa cuadrillé.',
         precio: PRECIO_LANZAMIENTO,
         categoria: 'animales',
         imagen: 'images/nuevosMuñecos/foca.jpeg'
@@ -46,7 +46,7 @@ const productos = [
     {
         id: 'raton',
         nombre: 'Ratoncito',
-        descripcion: 'Ratoncito blanco de tela suave con cuello cuadrillé marrón, curioso y tierno.',
+        descripcion: 'Ratoncito blanco de tela suave con cuello cuadrillé marrón.',
         precio: PRECIO_LANZAMIENTO,
         categoria: 'animales',
         imagen: 'images/nuevosMuñecos/raton.jpeg'

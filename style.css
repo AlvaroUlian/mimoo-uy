@@ -26,6 +26,8 @@
     --color-shadow: rgba(157, 181, 151, 0.35);
     --color-btn: #9DB597;
     --color-btn-hover: #8A9F84;
+    --color-btn-order: #8A6A50;
+    --color-btn-order-hover: #7A5E46;
 
     /* Tipografías */
     --font-heading: 'Nunito', sans-serif;
@@ -374,15 +376,20 @@ img {
 }
 
 .btn-order {
-    background-color: var(--color-pink);
-    color: var(--color-text-dark);
+    background-color: var(--color-btn-order);
+    color: #fff;
     width: 100%;
-    box-shadow: 0 4px 15px rgba(243, 197, 204, 0.4);
+    box-shadow: 0 4px 15px rgba(138, 106, 80, 0.3);
 }
 
 .btn-order:hover {
-    background-color: #efb3bc;
-    box-shadow: 0 4px 15px rgba(243, 197, 204, 0.7);
+    background-color: var(--color-btn-order-hover);
+    box-shadow: 0 6px 18px rgba(138, 106, 80, 0.4);
+}
+
+.btn-order:focus-visible {
+    outline: 3px solid var(--color-wallpaper-deep);
+    outline-offset: 2px;
 }
 
 /* ==========================================================================
