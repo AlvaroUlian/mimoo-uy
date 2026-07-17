@@ -458,6 +458,12 @@ img {
     font-size: 1.5rem;
 }
 
+.shipping-banner {
+    margin-top: 1rem;
+    border-color: var(--color-sage);
+    background-color: var(--color-sage-soft);
+}
+
 /* ==========================================================================
    Sobre mimoo
    ========================================================================== */
