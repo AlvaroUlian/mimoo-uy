@@ -36,6 +36,14 @@ const productos = [
         imagen: 'images/nuevosMuñecos/gaviota.jpeg'
     },
     {
+        id: 'patita',
+        nombre: 'Patita',
+        descripcion: 'Patita blanca de tela suave con pico y patitas amarillas, moño rosa a lunares y detalle a rayas.',
+        precio: PRECIO_LANZAMIENTO,
+        categoria: 'animales',
+        imagen: 'images/patita.jpeg'
+    },
+    {
         id: 'flor',
         nombre: 'Flor Sonrisa',
         descripcion: 'Margarita de tela blanca con centro naranja y carita bordada, pura alegría.',
