@@ -43,6 +43,8 @@ const productos = [
         categoria: 'flor',
         imagen: 'images/nuevosMuñecos/flor.jpeg'
     },
+    // Ratoncito — temporalmente no disponible
+    /*
     {
         id: 'raton',
         nombre: 'Ratoncito',
@@ -51,6 +53,7 @@ const productos = [
         categoria: 'animales',
         imagen: 'images/nuevosMuñecos/raton.jpeg'
     },
+    */
     {
         id: 'caballo',
         nombre: 'Caballito',
